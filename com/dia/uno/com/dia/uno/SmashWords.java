@@ -13,13 +13,42 @@ package dia.uno.com.dia.uno;
  * @author ledes
  *
  */
-public class SentenceSmash {
+public class SmashWords {
+	
+	public static String smash(String... words) {
+		String phrase = "";
+		int aux =0;
+		
+		if(words[0].isBlank()) {
+			aux = 1;
+		}
+
+		for(int i=aux;i<words.length;i++)	{
+			phrase += words[i];
+			if(i!=words.length-1)
+				phrase += " ";
+		}
+		System.out.println(" Words: "+ words.length);
+		return phrase;
+	  }
+	
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("Sentence Smash");
+		String longitud = smash(new String[] {"hello", "world", "this", "is", "great"});
+		String longitud2 = smash(new String[] {" ", "hello", "world", "this", "is", "great"});
+		String longitud3 = smash(new String[] {"hello"});
+		String longitud4 = smash(new String[] {" "});
+		
+		System.out.println("phrase:" + longitud);
+		
+		System.out.println("phrase:" + longitud2);
+		
+		System.out.println("phrase:" + longitud3);
+		
+		System.out.println("phrase:" + longitud4);
 	}
 
 }
