@@ -27,6 +27,8 @@ public class SmashWords {
 			phrase += words[i];
 			if(i!=words.length-1)
 				phrase += " ";
+			else 
+				i++;
 		}
 		System.out.println(" Words: "+ words.length);
 		return phrase;
