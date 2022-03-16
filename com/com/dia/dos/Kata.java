@@ -20,13 +20,14 @@ public class Kata {
 	
 	public static boolean betterThanAverage(int[] classPoints, int yourPoints) {
 		
-	    // Your code here
-	    return false;
-	}
-	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
+		int totalScore = classPoints.length, cal = 0, promedio = 0;
+		
+		for(int x =0; x<classPoints.length;x++)	{
+			cal += classPoints[x];
+		}
+		promedio = cal / totalScore;
+		
+		//val1>val2 ? true : false;
+	    return yourPoints>promedio ? true:false;
+	}	
 }
