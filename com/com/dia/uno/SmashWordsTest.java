@@ -1,4 +1,4 @@
-package dia.uno.com.dia.uno;
+package com.dia.uno;
 
 import static org.junit.Assert.*;
 

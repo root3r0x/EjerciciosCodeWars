@@ -8,7 +8,7 @@
  * Example
  * ['hello', 'world', 'this', 'is', 'great']  =>  'hello world this is great'
  */
-package dia.uno.com.dia.uno;
+package com.dia.uno;
 /**
  * @author ledes
  *
