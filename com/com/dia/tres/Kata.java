@@ -18,7 +18,25 @@ package com.dia.tres;
 public class Kata {
 	
 	public static String rps(String p1, String p2) {
-	    // your code
-		return "";
+	    
+		// Player 1 won.
+		if(p1.toUpperCase().equals("SCISSORS") && p2.toUpperCase().equals("PAPER"))
+			return "Player 1 won!";
+		if(p1.toUpperCase().equals("PAPER") && p2.toUpperCase().equals("ROCK"))
+			return "Player 1 won!";
+		if(p1.toUpperCase().equals("ROCK") && p2.toUpperCase().equals("SCISSORS"))
+			return "Player 1 won!";
+		
+		// Player 2 won.
+		if(p2.toUpperCase().equals("SCISSORS") && p1.toUpperCase().equals("PAPER"))
+			return "Player 2 won!";
+		if(p2.toUpperCase().equals("PAPER") && p1.toUpperCase().equals("ROCK"))
+			return "Player 2 won!";
+		if(p2.toUpperCase().equals("ROCK") && p1.toUpperCase().equals("SCISSORS"))
+			return "Player 2 won!";
+		
+		//Draw!.
+		return "Draw!";
+		
 	}
 }
