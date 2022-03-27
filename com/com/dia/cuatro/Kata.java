@@ -9,7 +9,16 @@ package com.dia.cuatro;
  *
  */
 public class Kata {
+	
 	public static String noSpace(final String x) {
-        return x;
+		
+		String noSpacesSTNG = new String();
+		
+		for(int i =0; i<x.length(); i++)	{
+        	if(x.charAt(i)!=' ')	{
+        		noSpacesSTNG += x.charAt(i);
+        	}
+        }
+		return noSpacesSTNG;
     }
 }

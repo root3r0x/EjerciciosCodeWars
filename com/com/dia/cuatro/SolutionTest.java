@@ -14,4 +14,5 @@ public class SolutionTest {
 	        assertEquals("8aaaaaddddr", Kata.noSpace("8aaaaa dddd r     "));
 	        assertEquals("jfBmgklf8hg88lbe8", Kata.noSpace("jfBm  gk lf8hg  88lbe8 "));
 	        assertEquals("8jaam", Kata.noSpace("8j aam"));
+	 }
 }
