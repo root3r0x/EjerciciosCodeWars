@@ -16,21 +16,27 @@ package com.dia.uno;
 public class SmashWords {
 	
 	public static String smash(String... words) {
-		String phrase = "";
-		int aux =0;
 		
-		if(words[0].isBlank()) {
-			aux = 1;
+		String phrase = new String();
+		
+		if(words.length==0) {
+			phrase = "";
+		}else {
+			
+			int aux =0;
+			
+			if(words[0].isBlank()) {
+				aux = 1;
+			}
+			
+			for(int i=aux;i<words.length;i++)	{
+				phrase += words[i];
+				if(i!=words.length-1)
+					phrase += " ";
+				else 
+					i++;
+			}
 		}
-
-		for(int i=aux;i<words.length;i++)	{
-			phrase += words[i];
-			if(i!=words.length-1)
-				phrase += " ";
-			else 
-				i++;
-		}
-		System.out.println(" Words: "+ words.length);
 		return phrase;
 	  }
 	
@@ -39,18 +45,10 @@ public class SmashWords {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String longitud = smash(new String[] {"hello", "world", "this", "is", "great"});
-		String longitud2 = smash(new String[] {" ", "hello", "world", "this", "is", "great"});
-		String longitud3 = smash(new String[] {"hello"});
-		String longitud4 = smash(new String[] {" "});
-		
-		System.out.println("phrase:" + longitud);
-		
-		System.out.println("phrase:" + longitud2);
-		
-		System.out.println("phrase:" + longitud3);
-		
-		System.out.println("phrase:" + longitud4);
+		smash(new String[] {"hello", "world", "this", "is", "great"});
+		smash(new String[] {" ", "hello", "world", "this", "is", "great"});
+		smash(new String[] {"hello"});
+		smash(new String[] {" "});
 	}
 
 }
