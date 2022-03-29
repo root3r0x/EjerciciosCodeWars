@@ -20,7 +20,8 @@ package com.dia.ocho;
 public class Solution {
 	
 	public static int areaOrPerimeter (int l, int w) {
-	    // code away...
-		return 0;
+	     
+		//if l==w it's Square [getArea] (LxL) else it's Rectangle [getPerimeter](L+L+L+L).
+		return l==w ? (l*l) : (l*2) + (w*2);
 	}
 }
