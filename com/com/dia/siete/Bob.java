@@ -34,7 +34,12 @@ public class Bob {
 	
 	public static int enough(int cap, int on, int wait){
 		
-		// your code here
+		int busSpace = cap - on;
+		
+		if(busSpace>wait || busSpace==wait)
+			wait = 0;
+		else
+			wait = wait-busSpace;
 		return wait;
 	}
 
