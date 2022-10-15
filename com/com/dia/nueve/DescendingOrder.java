@@ -14,8 +14,6 @@
 
 package com.dia.nueve;
 
-import java.util.ArrayList;
-
 /**
  * @author ledes
  *
@@ -25,9 +23,6 @@ public class DescendingOrder {
 	
 	public static int sortDesc(final int num) {
 	    //Your code
-		ArrayList<Integer> valores = new ArrayList<Integer>();
-		int maxVal = 0, mulDivVal = 10, pushVal =1;
-		
 		return num;
 	}
 	
@@ -37,41 +32,70 @@ public class DescendingOrder {
 	public static void main(String[] args) {
 		
 		//variables
-		int numeroOriginal = 3452;
-		int multiplicador = 1, resultado = 0, contador = 0, acumulador=0;
-		int[] numeros;
+		int numeroOriginal = 345982;
 		
+		int multiplicador = 1, 	resultado = 0, contador = 0;
+		
+		//Declaramos el  arreglo sin inicializar.
+		int[] numeros = null;
+		
+		//Revisamos que se pueda dividir entre si mismo.
 		resultado = numeroOriginal / multiplicador;
-		System.out.println(".-Noriginal: [" + resultado + "].");
-		System.out.println("");
+		System.out.println("Noriginal: [" + resultado + "] \n");
 		
+		//Obtenemos el divisor.
 		while (resultado>0) {	
 			
-			//hasta que se realicen todas las diviciones posibles.
+			//Hasta que se realicen todas las diviciones posibles.
 			multiplicador *= 10;
 			
 			//Primer condicion
 			resultado = numeroOriginal / multiplicador;	
 			
-			System.out.println("[w] Resultado: [" + resultado + "].");
-			System.out.println("\t[m] =" + multiplicador);
 			contador++;
 		} 
-		System.out.println("");
 		
 		if(contador!=0) {
-			
+			//Inicializamos el arreglo de numeros.
 			numeros = new int[contador];
 			
+			//Obtenemos cada cifra.
 			for(int i = 0; i<numeros.length;i++){	
-				multiplicador = multiplicador/10;
-				numeros[i] = numeroOriginal/multiplicador;
-				System.out.println("No["+ i + "] : [" + numeros[i] + "].");
 				
-				numeroOriginal = numeroOriginal - (multiplicador* numeros[i]);
+				//Disminuimos una cifra.
+				multiplicador = multiplicador/10; 
+				
+				//Obtenemos el resultado.
+				numeros[i] = numeroOriginal/multiplicador; 
+				
+				//Obtenemos el numero de la cifra..
+				numeroOriginal = numeroOriginal - (multiplicador * numeros[i]);
 			}
 		}
-		System.out.println("\n {" + contador + "}");
+		
+		//Validamos la longitud del array.
+		if(numeros.length==1) {
+			resultado = numeros[0];
+		}
+		
+		//Imprimimos el array.
+		for(int i = 0; i<contador;i++)  {
+			
+			System.out.println("i->["+ i + "]= " + numeros[i]);
+			
+			for(int x =0; x<contador; x++) {
+				//System.out.println("[" + x + "]" + " [" + numeros[i] + "]");
+				
+				if(numeros[i]>numeros[x]) {
+					
+					System.out.println("[" + numeros[x] + "]" + " [" + numeros[i] + "] si");
+				}
+				else {
+					numeros[x] = numeros[x];
+					System.out.println("[" + numeros[x] + "]" + " [" + numeros[i] + "] no");
+				}
+			}
+		} 
 	}
 }
 
